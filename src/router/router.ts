@@ -12,6 +12,7 @@ import { Page1, Page2, Page3, CollectionsPage, EditorPage } from "../pages"
 import { node, API } from "cope-client-utils"
 
 // TODO: return types expected for routerCfg
+
 export const routerCfg = async url => {
     const session = await Auth.currentAuthenticatedUser()
     //console.log("session:", { session })

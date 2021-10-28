@@ -1,11 +1,7 @@
 import React from "react"
 import Editor from "../../components/Editor"
 
-interface QueryParams {
-    nodeId: string
-}
-
-export const EditorPage = ({ data }: { data: QueryParams }) => (
+export const EditorPage = ({ data }) => (
     <div>
         <Editor nodeId={data ? data.nodeId : null} />
     </div>
