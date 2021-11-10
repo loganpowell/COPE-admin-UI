@@ -11,7 +11,7 @@ import awsconfig from "./aws-exports"
 //import { registerRouterDOM } from "@-0/browser"
 import * as K from "@-0/keys"
 import { router } from "./router"
-import { Provider } from "./components"
+import { Provider } from "./context"
 import { configureWith } from "cope-client-utils"
 
 // additional configurations in cope-client-utils provided

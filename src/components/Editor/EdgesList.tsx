@@ -3,7 +3,7 @@ import styled from "styled-components"
 import { node, edge } from "cope-client-utils"
 import { CRUD } from "cope-client-utils/lib/utils"
 import { Card, Button } from "@material-ui/core"
-import { Link } from ".."
+import { Link } from "../Link"
 import { collapse } from "cope-client-utils/lib/utils"
 
 const EdgesListCard = styled(Card)`
@@ -52,7 +52,7 @@ query getConnectedNodes($id: ID!) {
 }
 `
 
-function EdgesList({ nodeId }: { nodeId: string }) {
+export const EdgesList = ({ nodeId }: { nodeId: string }) => {
     const [linkedNodesList, setLinkedNodesList] = useState<any>([])
 
     useEffect(() => {
@@ -97,5 +97,3 @@ function EdgesList({ nodeId }: { nodeId: string }) {
         </div>
     )
 }
-
-export default EdgesList

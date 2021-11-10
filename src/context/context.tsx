@@ -11,7 +11,4 @@ export const CTX = createContext({
     $store$,
     parse: URL2obj,
     DefaultView: Pre,
-    page: null,
-    loading: true,
-    path: [],
 })

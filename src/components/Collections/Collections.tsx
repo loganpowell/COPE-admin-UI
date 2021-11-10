@@ -1,13 +1,15 @@
 import React from "react"
 import Sidebar from "./Sidebar"
 import CollectionHeader from "./CollectionHeader"
-import CollectionList from "./CollectionList"
+import { CollectionList } from "./CollectionList"
 import { Grid } from "@material-ui/core"
 
-function Collections({ type }: { type: string }) {
+export const Collections = ({ type }: { type: string }) => {
     // TODO
     // collection passed in param route can
     // be used to query for node type?
+
+    console.log("Collections:", { type })
     return (
         <Grid justifyContent="space-between" container>
             <Grid item md={3}>
@@ -20,5 +22,3 @@ function Collections({ type }: { type: string }) {
         </Grid>
     )
 }
-
-export default Collections

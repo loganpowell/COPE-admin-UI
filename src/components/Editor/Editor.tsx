@@ -11,7 +11,7 @@ import DeleteNodeDialog from "./DeleteNodeDialog"
 import DeleteAssetDialog from "./DeleteAssetDialog"
 import EditorSnackbar from "./EditorSnackbar"
 import RenderContentPreview from "../ContentPreview/RenderContentPreview"
-import EdgesList from "./EdgesList"
+import { EdgesList } from "./EdgesList"
 import AddEdgeDialog from "./AddEdgeDialog"
 import { RenderAssetWidget } from "../AssetWidgets"
 import { DropDownNodeTypes, DropDownNodeStatus } from "../DropDown"
@@ -38,7 +38,7 @@ const PreviewHeading = styled.h2`
     font-size: 1.125rem;
 `
 
-function Editor({ nodeId }: { nodeId?: string }) {
+export const Editor = ({ nodeId }: { nodeId?: string }) => {
     const [userData, setUserData] = useState<any>()
     const [nodeData, setNodeData] = useState<any>()
     const [addAssetDialogOpen, setAddAssetDialogOpen] = useState(false)
@@ -125,17 +125,15 @@ function Editor({ nodeId }: { nodeId?: string }) {
         console.log({ updated_assets })
         //@ts-ignore
         if (nodeId !== updated_node.id) {
-            const { URL_DOMN, URL_FULL, URL_HASH, URL_PATH, URL_QERY, URL_SUBD } = URL2obj(
-                window.location.href
-            )
+            const { _DOMN, _FURL, _HASH, _PATH, _QERY, _SUBD } = URL2obj(window.location.href)
             const href = obj2URL({
-                URL_DOMN,
-                URL_FULL,
-                URL_HASH,
-                URL_PATH,
+                _DOMN,
+                _FURL,
+                _HASH,
+                _PATH,
                 //@ts-ignore
-                URL_QERY: { nodeId: updated_node.id },
-                URL_SUBD,
+                _QERY: { nodeId: updated_node.id },
+                _SUBD,
             })
 
             DOMnavigated$.next({
@@ -264,5 +262,3 @@ function Editor({ nodeId }: { nodeId?: string }) {
         </Grid>
     )
 }
-
-export default Editor

@@ -1,10 +1,11 @@
 import React from "react"
-import Collections from "../../components/Collections"
+import { Collections } from "../../components"
 
-export const CollectionsPage = ({ data }) => {
+export const CollectionsPage = ({ data: { list, type } }) => {
+    console.log("CollectionsPage:", { list, type })
     return (
         <div>
-            <Collections type={data ? data.type : null} />
+            <Collections type={type} />
         </div>
     )
 }

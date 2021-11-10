@@ -52,7 +52,7 @@ function Sidebar() {
                     {linksAndSlugs.map(type => (
                         <SidebarNavLink key={type.typeSlug}>
                             {/* to={`/collections/${type.typeSlug}` */}
-                            <Link href={`admin/collections?type=${type.typeSlug}`}>
+                            <Link href={`/admin/collections?type=${type.typeSlug}`}>
                                 {type.typeName}
                             </Link>
                         </SidebarNavLink>

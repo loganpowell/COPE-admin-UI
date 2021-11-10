@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react"
 import styled from "styled-components"
 import { Card } from "@material-ui/core"
 import { node, API } from "cope-client-utils"
-import { Link } from ".."
+import { Link } from "../Link"
 
 const CollectionListCard = styled(Card)`
     margin: 8px 8px;
@@ -24,16 +24,15 @@ const CollectionListCardType = styled.div`
     color: gray;
 `
 // collection prop passed in from Collection.tsx
-function CollectionList({ collection }: { collection?: string }) {
+export const CollectionList = ({ collection }: { collection?: string }) => {
     const [nodesList, setNodesList] = useState<any[]>([])
-
 
     useEffect(() => {
         const query = {
             status: API.NodeStatus.DRAFT,
             type: collection?.toUpperCase(),
         }
-    
+
         const fetchNodes = async () => {
             node
                 //@ts-ignore
@@ -67,5 +66,3 @@ function CollectionList({ collection }: { collection?: string }) {
         </div>
     )
 }
-
-export default CollectionList
