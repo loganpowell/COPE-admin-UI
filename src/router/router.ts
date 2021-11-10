@@ -30,7 +30,7 @@ const getHomePageData = async () => {
     }
 }
 
-export const routerCfg = async url => {
+export const routerCfg: K.Router = async url => {
     const session = await Auth.currentAuthenticatedUser()
     //console.log("session:", { session })
     const match = URL2obj(url)
@@ -133,7 +133,7 @@ export const routerCfg = async url => {
     const page = RES[K.URL_PAGE]
     console.log("routed:", { page, data, match })
 
-    return { [K.URL.DATA]: data, [K.URL.PAGE]: page }
+    return { [K.URL_DATA]: data, [K.URL_PAGE]: page }
 }
 
 //const Page2 = ({ data }) => {
